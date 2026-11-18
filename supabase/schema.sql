@@ -36,3 +36,7 @@ create policy "own customers" on public.customers
 create policy "own transactions" on public.transactions
   for all to authenticated
   using (owner = auth.uid()) with check (owner = auth.uid());
+
+-- پروژه‌های جدید Supabase به جدول‌هایی که با SQL ساخته می‌شوند خودکار دسترسی نمی‌دهند
+grant usage on schema public to authenticated;
+grant select, insert, update on public.customers, public.transactions to authenticated;
