@@ -32,7 +32,7 @@ android {
             storeFile = file("release.jks")
             val storePw = System.getenv("KEYSTORE_PASSWORD")?.trim()
             storePassword = storePw
-            keyAlias = System.getenv("KEY_ALIAS")?.trim().takeUnless { it.isNullOrEmpty() } ?: "makharej"
+            keyAlias = System.getenv("KEY_ALIAS")?.trim().takeUnless { it.isNullOrEmpty() } ?: "daftar"
             keyPassword = System.getenv("KEY_PASSWORD")?.trim().takeUnless { it.isNullOrEmpty() } ?: storePw
         }
     }
